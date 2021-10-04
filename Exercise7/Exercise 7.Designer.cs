@@ -1,7 +1,7 @@
 ﻿
 namespace Exercise_7
 {
-	partial class Form1
+	partial class Exercise_7
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -40,6 +40,8 @@ namespace Exercise_7
 			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
+			this.button2 = new System.Windows.Forms.Button();
+			this.textBox5 = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -133,11 +135,30 @@ namespace Exercise_7
 			this.label5.TabIndex = 12;
 			this.label5.Text = "Current State";
 			// 
-			// Form1
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(12, 82);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(149, 31);
+			this.button2.TabIndex = 13;
+			this.button2.Text = "Dequeue";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// textBox5
+			// 
+			this.textBox5.Location = new System.Drawing.Point(176, 109);
+			this.textBox5.Name = "textBox5";
+			this.textBox5.Size = new System.Drawing.Size(100, 26);
+			this.textBox5.TabIndex = 14;
+			// 
+			// Exercise_7
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(440, 414);
+			this.Controls.Add(this.textBox5);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.textBox7);
@@ -149,8 +170,8 @@ namespace Exercise_7
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "Exercise_7";
+			this.Text = "Exercise 7";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -169,6 +190,8 @@ namespace Exercise_7
 		private System.Windows.Forms.TextBox textBox7;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.TextBox textBox5;
 	}
 }
 
