@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Lab1Exercise2
 {
-	public partial class Form1 : Form
+	public partial class Exercise2 : Form
 	{
 		int items = 0;
 		Queue<Int32> dataQueue = new Queue<Int32>();
-		public Form1()
+		public Exercise2()
 		{
 			InitializeComponent();
 			averageButton.Click += AverageButton_Click;

@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Collections.Concurrent;
+using System.IO;
 namespace Exercise_7
 {
-	public partial class Form1 : Form
+	public partial class Exercise_7 : Form
 	{
-		int gestureState;
+		int gestureState = 0;
 		int wait1 = 0;
 		int wait2 = 0;
 		int wait3 = 0;
+		ConcurrentQueue<Int32> dataQueue = new ConcurrentQueue<Int32>();
+		int dataByte;
 
-		public Form1()
+		public Exercise_7()
 		{
 			InitializeComponent();
 		}
@@ -29,8 +32,8 @@ namespace Exercise_7
 			int aX = Convert.ToInt32(textBox1.Text);
 			int aY = Convert.ToInt32(textBox2.Text);
 			int aZ = Convert.ToInt32(textBox3.Text);
-			
 
+			dataQueue.Enqueue(aX);
 
 			if (gestureState == 0)
 			{
@@ -83,6 +86,12 @@ namespace Exercise_7
 			string dataString = "{" + aX.ToString() + ", " + aY.ToString() + ", " + aZ.ToString() + ", " + gestureState.ToString() + "}, ";
 			textBox7.AppendText(dataString);
 			textBox4.Text = gestureState.ToString();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			dataQueue.TryDequeue(out dataByte);
+			textBox5.Text = dataByte.ToString();
 		}
 	}
 }

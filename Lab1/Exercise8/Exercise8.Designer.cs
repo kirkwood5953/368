@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-	partial class Form1
+	partial class Exercise8
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -57,6 +57,16 @@ namespace WindowsFormsApp1
 			this.TextBox4 = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.gestureBox = new System.Windows.Forms.TextBox();
+			this.zAccelBox = new System.Windows.Forms.TextBox();
+			this.yAccelBox = new System.Windows.Forms.TextBox();
+			this.xAccelBox = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.minBox = new System.Windows.Forms.TextBox();
+			this.maxBox = new System.Windows.Forms.TextBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// comboBox1
@@ -66,6 +76,7 @@ namespace WindowsFormsApp1
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(181, 28);
 			this.comboBox1.TabIndex = 0;
+			this.comboBox1.Text = "COM4";
 			// 
 			// button1
 			// 
@@ -136,18 +147,17 @@ namespace WindowsFormsApp1
 			// 
 			// serialDataBox
 			// 
-			this.serialDataBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.serialDataBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.serialDataBox.Location = new System.Drawing.Point(12, 214);
 			this.serialDataBox.Multiline = true;
 			this.serialDataBox.Name = "serialDataBox";
-			this.serialDataBox.Size = new System.Drawing.Size(572, 240);
+			this.serialDataBox.Size = new System.Drawing.Size(533, 231);
 			this.serialDataBox.TabIndex = 9;
 			// 
 			// serialPort1
 			// 
-			this.serialPort1.PortName = "COM5";
+			this.serialPort1.PortName = "COM6";
 			this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
 			// 
 			// timer1
@@ -222,7 +232,7 @@ namespace WindowsFormsApp1
 			// 
 			// selectFilename
 			// 
-			this.selectFilename.Location = new System.Drawing.Point(12, 536);
+			this.selectFilename.Location = new System.Drawing.Point(12, 583);
 			this.selectFilename.Name = "selectFilename";
 			this.selectFilename.Size = new System.Drawing.Size(154, 32);
 			this.selectFilename.TabIndex = 19;
@@ -232,7 +242,7 @@ namespace WindowsFormsApp1
 			// 
 			// fileNameBox
 			// 
-			this.fileNameBox.Location = new System.Drawing.Point(186, 539);
+			this.fileNameBox.Location = new System.Drawing.Point(186, 586);
 			this.fileNameBox.Name = "fileNameBox";
 			this.fileNameBox.Size = new System.Drawing.Size(398, 26);
 			this.fileNameBox.TabIndex = 20;
@@ -240,7 +250,7 @@ namespace WindowsFormsApp1
 			// checkBox1
 			// 
 			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(17, 504);
+			this.checkBox1.Location = new System.Drawing.Point(17, 551);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(122, 24);
 			this.checkBox1.TabIndex = 21;
@@ -280,11 +290,101 @@ namespace WindowsFormsApp1
 			this.gestureBox.Size = new System.Drawing.Size(168, 26);
 			this.gestureBox.TabIndex = 25;
 			// 
-			// Form1
+			// zAccelBox
+			// 
+			this.zAccelBox.Location = new System.Drawing.Point(382, 492);
+			this.zAccelBox.Name = "zAccelBox";
+			this.zAccelBox.Size = new System.Drawing.Size(100, 26);
+			this.zAccelBox.TabIndex = 37;
+			// 
+			// yAccelBox
+			// 
+			this.yAccelBox.Location = new System.Drawing.Point(219, 492);
+			this.yAccelBox.Name = "yAccelBox";
+			this.yAccelBox.Size = new System.Drawing.Size(100, 26);
+			this.yAccelBox.TabIndex = 36;
+			// 
+			// xAccelBox
+			// 
+			this.xAccelBox.Location = new System.Drawing.Point(56, 492);
+			this.xAccelBox.Name = "xAccelBox";
+			this.xAccelBox.Size = new System.Drawing.Size(100, 26);
+			this.xAccelBox.TabIndex = 35;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(344, 495);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(32, 20);
+			this.label14.TabIndex = 34;
+			this.label14.Text = "Az:";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Location = new System.Drawing.Point(182, 495);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(31, 20);
+			this.label15.TabIndex = 33;
+			this.label15.Text = "Ay:";
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(19, 495);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(31, 20);
+			this.label16.TabIndex = 32;
+			this.label16.Text = "Ax:";
+			// 
+			// minBox
+			// 
+			this.minBox.Location = new System.Drawing.Point(653, 307);
+			this.minBox.Name = "minBox";
+			this.minBox.Size = new System.Drawing.Size(115, 26);
+			this.minBox.TabIndex = 38;
+			// 
+			// maxBox
+			// 
+			this.maxBox.Location = new System.Drawing.Point(653, 353);
+			this.maxBox.Name = "maxBox";
+			this.maxBox.Size = new System.Drawing.Size(115, 26);
+			this.maxBox.TabIndex = 39;
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(598, 310);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(34, 20);
+			this.label11.TabIndex = 40;
+			this.label11.Text = "Min";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(598, 359);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(38, 20);
+			this.label12.TabIndex = 41;
+			this.label12.Text = "Max";
+			// 
+			// Exercise8
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(596, 571);
+			this.ClientSize = new System.Drawing.Size(780, 638);
+			this.Controls.Add(this.label12);
+			this.Controls.Add(this.label11);
+			this.Controls.Add(this.maxBox);
+			this.Controls.Add(this.minBox);
+			this.Controls.Add(this.zAccelBox);
+			this.Controls.Add(this.yAccelBox);
+			this.Controls.Add(this.xAccelBox);
+			this.Controls.Add(this.label14);
+			this.Controls.Add(this.label15);
+			this.Controls.Add(this.label16);
 			this.Controls.Add(this.gestureBox);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.TextBox4);
@@ -310,8 +410,8 @@ namespace WindowsFormsApp1
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.comboBox1);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "Exercise8";
+			this.Text = "Exercise 8";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -346,6 +446,16 @@ namespace WindowsFormsApp1
 		private System.Windows.Forms.TextBox TextBox4;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox gestureBox;
+		private System.Windows.Forms.TextBox zAccelBox;
+		private System.Windows.Forms.TextBox yAccelBox;
+		private System.Windows.Forms.TextBox xAccelBox;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.TextBox minBox;
+		private System.Windows.Forms.TextBox maxBox;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label12;
 	}
 }
 
