@@ -8,13 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Exercise3
+namespace Exercise6
 {
-	public partial class Exercise3 : Form
+	public partial class Form1 : Form
 	{
-		float randomNum;
-
-		public Exercise3()
+		public Form1()
 		{
 			InitializeComponent();
 		}
