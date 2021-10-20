@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Exercise6
+namespace Lab2Exercise6
 {
 	static class Program
 	{
@@ -16,7 +16,7 @@ namespace Exercise6
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Exercise6());
+			Application.Run(new Lab2Exercise6());
 		}
 	}
 }
