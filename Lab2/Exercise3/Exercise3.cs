@@ -23,7 +23,7 @@ namespace Exercise3
 		private void button1_Click(object sender, EventArgs e)
 		{
 			var rand = new Random();
-			int randomNum = rand.Next(100, 1000);
+			int randomNum = rand.Next(500, 1000);
 			textBox1.Text = randomNum.ToString();
 			timer1.Interval = randomNum;
 			state = 2;
