@@ -38,7 +38,7 @@ namespace Lab2Exercise6
 			int dataByte;
 			double vOut;
 			double tempData;
-			chart1.ChartAreas[0].AxisY.Maximum = 150;
+			chart1.ChartAreas[0].AxisY.Maximum = 25;
 
 			if (serialPort1.IsOpen)
 			{
@@ -66,7 +66,7 @@ namespace Lab2Exercise6
 						combined = (mostImport << 5) | leastImport;
 
 						vOut = combined * 3.6 / 1023;
-						double test = Math.Log((3.6 - vOut) / vOut) / 3435;
+						double test = Math.Log( vOut/ (3.6 - vOut)) / 3435;
 						double test2 = 0.0034129;
 						double test3 = test + test2;
 						tempData = Math.Pow(test3, -1)-273;
