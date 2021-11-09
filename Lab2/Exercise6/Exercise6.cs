@@ -25,7 +25,7 @@ namespace Lab2Exercise6
 		int mostImport = 0;
 		int leastImport = 0;
 		int combined;
-		double R2;
+		
 
 		public Lab2Exercise6()
 		{
@@ -47,7 +47,7 @@ namespace Lab2Exercise6
 				while (dataQueue.TryDequeue(out dataByte))
 				{
 
-					if (state ==0)
+					if (state == 0)
 					{
 						if (dataByte == 255)
 						{
@@ -57,7 +57,7 @@ namespace Lab2Exercise6
 					else if (state == 1)
 					{
 						mostImport = dataByte;
-					
+
 						state = 2;
 					}
 					else if (state == 2)
@@ -66,14 +66,14 @@ namespace Lab2Exercise6
 						combined = (mostImport << 5) | leastImport;
 
 						vOut = combined * 3.6 / 1023;
-						double test = Math.Log( vOut/ (3.6 - vOut)) / 3435;
+						double test = Math.Log(vOut / (3.6 - vOut)) / 3435;
 						double test2 = 0.0034129;
 						double test3 = test + test2;
-						tempData = Math.Pow(test3, -1)-273;
+						tempData = Math.Pow(test3, -1) - 273;
 
 						if (checkBox1.Checked == true)
 							outputFile.Write(tempData.ToString() + ", " + DateTime.Now.ToLongTimeString() + "\r\n");
-							
+
 						count++;
 						chart1.Series["Series1"].Points.AddXY(count.ToString(), tempData.ToString());
 						serialDataBox.AppendText(tempData.ToString() + ", ");
@@ -81,7 +81,7 @@ namespace Lab2Exercise6
 
 						state = 0;
 					}
-					
+
 				}
 			}
 			stringLengthBox.Text = serialDataString.Length.ToString();
@@ -137,7 +137,10 @@ namespace Lab2Exercise6
 			else
 				outputFile.Close();
 		}
-	
-	
+
+		private void chart1_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

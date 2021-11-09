@@ -194,6 +194,7 @@ namespace Lab2Exercise6
 			this.chart1.Size = new System.Drawing.Size(1037, 710);
 			this.chart1.TabIndex = 22;
 			this.chart1.Text = "chart1";
+			this.chart1.Click += new System.EventHandler(this.chart1_Click);
 			// 
 			// textBox1
 			// 
