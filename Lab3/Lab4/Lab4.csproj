@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7AFB4AB-AB8F-4218-B0D7-A6662EC392B4}</ProjectGuid>
+    <ProjectGuid>{2283E6A9-8A66-4CD3-A85D-EF0765AFACF6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsFormsApp1</RootNamespace>
     <AssemblyName>WindowsFormsApp1</AssemblyName>
@@ -47,16 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exercise6.cs">
+    <Compile Include="Lab4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exercise6.Designer.cs">
-      <DependentUpon>Exercise6.cs</DependentUpon>
+    <Compile Include="Lab4.Designer.cs">
+      <DependentUpon>Lab4.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Exercise6.resx">
-      <DependentUpon>Exercise6.cs</DependentUpon>
+    <EmbeddedResource Include="Lab4.resx">
+      <DependentUpon>Lab4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
