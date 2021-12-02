@@ -16,12 +16,12 @@ namespace WindowsFormsApp1
 	{
 		ConcurrentQueue<Int32> dataQueue = new ConcurrentQueue<Int32>();
 		ConcurrentQueue<Int32> averageQueue = new ConcurrentQueue<Int32>();
-		ConcurrentQueue<Int32> stabilityQueue = new ConcurrentQueue<Int32>();
+		ConcurrentQueue<double> stabilityQueue = new ConcurrentQueue<double>();
 		string serialDataString = "";
 		StreamWriter outputFile;
 		int count;
-		int nothing;
-		double tare;
+		double nothing;
+		int nothing1;
 		double distance;
 
 		int serialPortOpen = 0;
@@ -67,15 +67,20 @@ namespace WindowsFormsApp1
 						leastImport = dataByte;
 						combined = (mostImport << 5) | leastImport;
 						averageQueue.Enqueue(combined);
-						stabilityQueue.Enqueue(combined);
+
+						if (combined <= 710 && combined >= 31 )
+						{
+							stabilityQueue.Enqueue(array1[710 - combined]);
+						}
+						
 						textBox1.Text = combined.ToString();
 
-						if (averageQueue.Count >= 200)
+						if (averageQueue.Count >= 100)
 						{
 							double ave = averageQueue.Average();
 							int average = Convert.ToInt32(ave);
 							vOut = average * 3.6 / 1023;
-							if (average >= 710)
+							if (average > 710)
 							{
 								textBox5.Text = "saturated";
 							}
@@ -85,21 +90,31 @@ namespace WindowsFormsApp1
 							}
 							else
 							{
-								textBox5.Text = "";
-								distance = array1[average-31];
+								distance = array1[710 - average];
 								textBox4.Text = distance.ToString("N2") + " cm";
+								if (stabilityQueue.Count >= 1000)
+								{
+									double[] stabilityArray = stabilityQueue.ToArray();
+									double average1 = stabilityArray.Average();
+									double sumofSquare = stabilityArray.Select(val => (val - average1) * (val - average1)).Sum();
+									double sd = Math.Sqrt(sumofSquare / stabilityArray.Length);
+									
+									textBox5.Text = sd.ToString("N3");
+									stabilityQueue.TryDequeue(out nothing);
+
+									if (checkBox1.Checked == true)
+										outputFile.Write(average.ToString() + ", " + DateTime.Now.ToLongTimeString() + "\r\n");
+								}
 							}
 							textBox2.Text = vOut.ToString("N3");
 							textBox3.Text = average.ToString("N3");
-							if (checkBox1.Checked == true)
-								outputFile.Write(average.ToString() + ", " + DateTime.Now.ToLongTimeString() + "\r\n");
+							
 							chart1.Series["Series1"].Points.AddXY(count.ToString(), vOut.ToString());
 							count++;
 
-
-							averageQueue.TryDequeue(out nothing);
+							averageQueue.TryDequeue(out nothing1);
 						}
-						
+
 						
 						
 					
@@ -141,14 +156,12 @@ namespace WindowsFormsApp1
 			}
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void selectFilename_Click(object sender, EventArgs e)
 		{
-			tare = distance;
-		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			tare = 0;
+			SaveFileDialog myDialogBox = new SaveFileDialog();
+			myDialogBox.InitialDirectory = @"C:\Users\kylek\Documents\Lab 1 Data";
+			myDialogBox.ShowDialog();
+			fileNameBox.Text = myDialogBox.FileName.ToString() + ".CSV";
 		}
 	}
 }

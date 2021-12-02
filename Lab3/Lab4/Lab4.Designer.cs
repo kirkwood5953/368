@@ -51,8 +51,6 @@ namespace WindowsFormsApp1
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.textBox5 = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.button3 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -101,6 +99,7 @@ namespace WindowsFormsApp1
 			this.selectFilename.TabIndex = 22;
 			this.selectFilename.Text = "Select Filename";
 			this.selectFilename.UseVisualStyleBackColor = true;
+			this.selectFilename.Click += new System.EventHandler(this.selectFilename_Click);
 			// 
 			// label1
 			// 
@@ -193,7 +192,7 @@ namespace WindowsFormsApp1
 			// 
 			// textBox5
 			// 
-			this.textBox5.Location = new System.Drawing.Point(613, 297);
+			this.textBox5.Location = new System.Drawing.Point(676, 297);
 			this.textBox5.Name = "textBox5";
 			this.textBox5.Size = new System.Drawing.Size(134, 26);
 			this.textBox5.TabIndex = 40;
@@ -203,34 +202,15 @@ namespace WindowsFormsApp1
 			this.label6.AutoSize = true;
 			this.label6.Location = new System.Drawing.Point(525, 300);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(64, 20);
+			this.label6.Size = new System.Drawing.Size(145, 20);
 			this.label6.TabIndex = 39;
-			this.label6.Text = "Stability";
-			// 
-			// textBox6
-			// 
-			this.textBox6.Location = new System.Drawing.Point(753, 297);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(134, 26);
-			this.textBox6.TabIndex = 41;
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(818, 12);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(134, 86);
-			this.button3.TabIndex = 42;
-			this.button3.Text = "Reset";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.button3_Click);
+			this.label6.Text = "Standard Deviation";
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(963, 408);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.textBox6);
 			this.Controls.Add(this.textBox5);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.textBox4);
@@ -275,8 +255,6 @@ namespace WindowsFormsApp1
 		private System.Windows.Forms.TextBox textBox4;
 		private System.Windows.Forms.TextBox textBox5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.Button button3;
 	}
 }
 
